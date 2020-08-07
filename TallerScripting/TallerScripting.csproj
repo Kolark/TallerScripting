@@ -48,10 +48,12 @@
     <Compile Include="AttackSkill.cs" />
     <Compile Include="Combate.cs" />
     <Compile Include="Critter.cs" />
+    <Compile Include="DefUp.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Skill.cs" />
+    <Compile Include="SpDwn.cs" />
     <Compile Include="SupportSkill.cs" />
   </ItemGroup>
   <ItemGroup>

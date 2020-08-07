@@ -17,7 +17,7 @@ namespace TallerScripting
 
         public override void DoSkill(Critter currentCritter, Critter enemyCritter)
         {
-            
+            float damageValue = (power + currentCritter.BaseAttack)  * Stats.Matriz[(int)(affinity),(int)(enemyCritter.Affinity)];
         }
 
     }
