@@ -13,6 +13,11 @@ namespace TallerScripting
         private int baseDefense;
         private int baseSpeed;
         private int hp;
+
+        public int bonusAttack;
+        public int bonusDefense;
+        public int debuffSpeed;
+
         private List<Skill> moveSet;
         Affinity affinity;
 
@@ -36,9 +41,9 @@ namespace TallerScripting
         }
 
         public string Name { get => name;}
-        public int BaseAttack { get => baseAttack;}
-        public int BaseDefense { get => baseDefense;}
-        public int BaseSpeed { get => baseSpeed;}
+        public int BaseAttack { get => baseAttack + bonusAttack;}
+        public int BaseDefense { get => baseDefense + bonusDefense;}
+        public int BaseSpeed { get => baseSpeed - debuffSpeed;}
         public int Hp { get => hp;}
         public Affinity Affinity { get => affinity;}
         public List<Skill> MoveSet { get => moveSet;}

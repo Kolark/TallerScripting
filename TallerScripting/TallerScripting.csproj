@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affinities.cs" />
+    <Compile Include="AtkUp.cs" />
     <Compile Include="AttackSkill.cs" />
     <Compile Include="Critter.cs" />
     <Compile Include="Player.cs" />
