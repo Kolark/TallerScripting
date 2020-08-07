@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
-    class Program
+    class PruebasUnitarias
     {
         static void Main(string[] args)
         {
 
-            Console.WriteLine(2 % 10);
+            AttackSkill attackSkill = new AttackSkill("AtaqueFeróz", 15, Affinity.Wind);
+            Console.WriteLine(attackSkill.Power);
+
         }
     }
 }
