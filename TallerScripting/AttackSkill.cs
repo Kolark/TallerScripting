@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
+    
     class AttackSkill : Skill
     {
-        public AttackSkill(string name, int power, Affinity affinity) : base(name, power, affinity) {}
+        Random rnd = new Random();
+        public AttackSkill(string name, int power, Affinity affinity) : base(name, power, affinity) 
+        {
+            this.power = rnd.Next(1, 11);
+        }
 
-        public override void DoSkill(Critter critter)
+        public override void DoSkill(Critter currentCritter, Critter enemyCritter)
         {
             
         }

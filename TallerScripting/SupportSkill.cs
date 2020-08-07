@@ -21,14 +21,15 @@ namespace TallerScripting
         {
             this.porcentaje = porcentaje;
             this.habilidad = habilidad;
+            this.power = 0;
         }
 
         public float Porcentaje { get => porcentaje;}
         public int Valor { get => valor;}
 
-        public override void DoSkill(Critter critter)
+        public override void DoSkill(Critter currentCritter, Critter enemyCritter)
         {
-
+            
         }
 
 
