@@ -1,8 +1,8 @@
 # Taller1Scripting
  Aca esta la solución para el taller 1 de scripting
  Por : 
- Felipe Loaiza Martinez
- Daniel Muñoz Perez
+ **Felipe Loaiza Martinez
+ Daniel Muñoz Perez**
  
  # El approach al taller
  
