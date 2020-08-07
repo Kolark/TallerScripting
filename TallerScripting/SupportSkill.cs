@@ -28,18 +28,7 @@ namespace TallerScripting
 
         public override void DoSkill(Critter critter)
         {
-        if(habilidad == Habilidad.atkUp)
-            {
 
-            }
-        else if (habilidad == Habilidad.DefUp)
-            {
-
-            }
-            else if (habilidad == Habilidad.SpeedDown)
-            {
-
-            }
         }
 
 

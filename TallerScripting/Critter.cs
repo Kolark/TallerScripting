@@ -30,6 +30,11 @@ namespace TallerScripting
             moveSet = skills;
         }
 
+        public void GetDamage(Skill skill, Critter critter)
+        {
+            int damageTaken = (skill.Power + critter.baseAttack) /*  * AffinityMultiplier*/;
+        }
+
         public string Name { get => name;}
         public int BaseAttack { get => baseAttack;}
         public int BaseDefense { get => baseDefense;}
