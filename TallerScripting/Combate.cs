@@ -28,10 +28,11 @@ namespace TallerScripting
             {
 
                 int index = contador % 2;
-
+                Console.WriteLine("The player  " + (index + 1) + " did the following effect");
                     
                 if(skill < stacks[index].Peek().MoveSet.Count)
                 {
+                    Console.WriteLine("critter: " + stacks[index].Peek().Name);
                     stacks[index].Peek().MoveSet[skill].DoSkill(stacks[index].Peek(), stacks[1 - index].Peek());
                     if (stacks[1 - index].Peek().Hp <= 0)
                     {
@@ -45,7 +46,7 @@ namespace TallerScripting
                     }
                     contador++;
                     index = contador % 2;
-                    //Console.WriteLine("Es turno del jugador: " + (index + 1));
+                    Console.WriteLine("Ahora es el turno del jugador: " + (index + 1));
                 }
                 else
                 {
