@@ -46,6 +46,11 @@ namespace TallerScripting
             combate.Turn(1);
             combate.Turn(1);
 
+            //Critter tierra = new Critter("DragonsitoTierra", 70, 100, 50, 200, Affinity.Earth, skillSetTierra);
+            Console.WriteLine(tierra.BaseAttack);
+            Console.WriteLine(tierra.BaseDefense);
+            Console.WriteLine(tierra.BaseSpeed);
+
 
         }
     }

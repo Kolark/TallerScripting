@@ -21,15 +21,21 @@ namespace TallerScripting
         private List<Skill> moveSet;
         Affinity affinity;
 
+        Random rnd = new Random();
 
 
         
         public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, float hp, Affinity affinity, List<Skill> skills)
         {
+            
+            //totalStyle += (dress.DressColor != Dress.EDressColor.White || dress.DressColor != Dress.EDressColor.Black ? (int)(purse.Style * 1.5f) : purse.Style);
+            this.baseAttack = (baseAttack < 10 || baseAttack > 100 ? rnd.Next(1, 101) : baseAttack);
+            this.baseDefense = (baseDefense < 10 || baseDefense > 100 ? rnd.Next(1, 101) : baseDefense);
+            this.baseSpeed = (baseSpeed < 1 || baseSpeed > 50 ? rnd.Next(1, 51) : baseSpeed);
             this.name = name;
-            this.baseAttack = baseAttack;
-            this.baseDefense = baseDefense;
-            this.baseSpeed = baseSpeed;
+            //this.baseAttack = baseAttack;
+            //this.baseDefense = baseDefense;
+            //this.baseSpeed = baseSpeed;
             this.hp = hp;
             this.affinity = affinity;
             moveSet = skills;
