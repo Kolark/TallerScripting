@@ -8,7 +8,9 @@ namespace TallerScripting
 {
     class AttackSkill : Skill
     {
-        public AttackSkill(string name, int power, Affinity affinity) : base(name, power, affinity) {}
+        public AttackSkill(string name, int power, Affinity affinity) : base(name, power, affinity)
+        {
+        }
 
         public override void DoSkill(Critter critter)
         {
