@@ -8,73 +8,141 @@ namespace TallerScripting
 {
     class PruebasUnitarias
     {
+        //PRUEBAS 1-2
+        /*
         static void Main(string[] args)
         {
-
-            AttackSkill attackSkill = new AttackSkill("AtaqueFeróz", 0, Affinity.Fire);
-            Console.WriteLine($"The power of the attack skill is: {attackSkill.Power}");
-
-            SupportSkill atkUp = new AtkUp("AumentoDaño", 15, Affinity.Fire, 0.2f, 3);
-            SupportSkill dfUp = new DefUp("AumentoDefensa", 15, Affinity.Dark, 0.2f, 3);
-            SupportSkill spdDwn = new SpDwn("DisminucionVelocida", 15, Affinity.Dark, -0.3f, 3);
-            Console.WriteLine("=============================================================== FIN PRUEBA UNITARIA 1");
-            Console.WriteLine($"The power of the dfUp skill is: {dfUp.Power}");
+            Console.WriteLine("=============PRUEBA1=================");
+            AttackSkill attackSkill = new AttackSkill("AtaqueFeróz", 0, Affinity.Fire); //PRUEBA 1
+            Console.WriteLine($"The power of the attackSkill skill is: {attackSkill.Power}");
+            Console.WriteLine("=============PRUEBA2=================");
+            SupportSkill atkUp = new AtkUp("AumentoDaño", 15, Affinity.Fire, 0.2f, 3); //PRUEBA 2
             Console.WriteLine($"The power of the atkUp skill is: {atkUp.Power}");
-            Console.WriteLine($"The power of the spdDwn skill is: {spdDwn.Power}");
-            Console.WriteLine("=============================================================== FIN PRUEBA UNITARIA 2");
+        }
+        */
 
-            List<Skill> skillSetTierra = new List<Skill> {dfUp, spdDwn };
-            List<Skill> skillSetAgua = new List<Skill> { attackSkill, spdDwn };
-            //List<Skill> skillSetLuz = new List<Skill> { dfUp, spdDwn }; FUNCIONAN PARA PRUEBA 3 Y 4
-            List<Skill> skillSetLuz = new List<Skill> { dfUp, attackSkill };
-            List<Skill> skillSetOscuridad = new List<Skill> { attackSkill, spdDwn };
 
+        //Prueba 3-4
+        /*
+        static void Main(string[] args)
+        {
+           SupportSkill dfUp = new DefUp("AumentoDefensa", 15, Affinity.Dark, 0.2f, 3);
+           SupportSkill spdDwn = new SpDwn("DisminucionVelocida", 15, Affinity.Dark, -0.3f, 3);
+
+           List<Skill> skillSetAgua = new List<Skill> {spdDwn};
+           List<Skill> skillSetTierra = new List<Skill> { dfUp};
+
+            Critter agua = new Critter("DragonsitoAgua", 60, 60, 50, 100, Affinity.Water, skillSetAgua);
             Critter tierra = new Critter("DragonsitoTierra", 50, 50, 10, 200, Affinity.Earth, skillSetTierra);
-            Critter luz = new Critter("DragonsitoLuz", 40, 40, 5, 150, Affinity.Light, skillSetLuz); 
-            Critter agua = new Critter("DragonsitoAgua", 60, 60, 50, 100, Affinity.Water, skillSetAgua); 
-            Critter oscuridad = new Critter("DragonsitoOscuridad", 70, 70, 30, 300, Affinity.Dark, skillSetOscuridad);
 
-            //List<Critter> critersEsclavos1 = new List<Critter> { tierra, luz }; FUNCIONAN PARA PRUEBA 3 Y 4
-            //List<Critter> critersEsclavos2 = new List<Critter> { oscuridad, agua }; 
-            List<Critter> critersEsclavos1 = new List<Critter> { agua, luz };
-            List<Critter> critersEsclavos2 = new List<Critter> { oscuridad, tierra };
+            List<Critter> critersEsclavos1 = new List<Critter> { agua };
+            List <Critter> critersEsclavos2 = new List<Critter> { tierra};
+            
 
             Player player1 = new Player(critersEsclavos1);
             Player player2 = new Player(critersEsclavos2);
 
             Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
 
+            Console.WriteLine("=============================================================== PRUEBA UNITARIA 3");
+            combate.Turn(0);//1 spdown
+            Console.WriteLine( "Speed Base: " + tierra.BaseSpeed);
+            Console.WriteLine("Speed: " + tierra.Speed);
 
+            Console.WriteLine("=============================================================== PRUEBA UNITARIA 4");
 
+            Console.WriteLine("Defensa bonus : " + tierra.bonusDefense);
+            Console.WriteLine("Maxima defensa posible : " +  dfUp.GetMaxBonus(tierra));
+            combate.Turn(0);//2 defUp
+            combate.Turn(0);//1 spdown
+            combate.Turn(0);//2 defUp
+            combate.Turn(0);//1 spdown
+            combate.Turn(0);//2 defUp
+            combate.Turn(0);//1  spdown
+            combate.Turn(0);//2 defUp Utiliza por cuarta vez defensa y no se le permite, pierde el turno
+            Console.WriteLine("Luego de aplicar dfUp 4 veces");
+
+            Console.WriteLine("Defensa bonus : " + tierra.bonusDefense);
             
-            //combate.Turn(1);//1
-            //combate.Turn(0);//2
-            //Console.WriteLine(agua.BaseSpeed);
-            //Console.WriteLine(agua.Speed);
+        }*/
+        //PRUEBA 5
+        /*
+        static void Main(string[] args)
+        {
+            AttackSkill attackSkill = new AttackSkill("AtaqueFeróz", 5, Affinity.Fire);
+            SupportSkill dfUp = new DefUp("AumentoDefensa", 15, Affinity.Dark, 0.2f, 3);
 
-            Console.WriteLine("=============================================================== FIN PRUEBA UNITARIA 3");
-            //combate.Turn(0);//1
-            //combate.Turn(0);//2
-            //Console.WriteLine(luz.bonusDefense);
-            //Console.WriteLine(dfUp.GetMaxBonus(luz));
-            //combate.Turn(0);//1
-            //combate.Turn(0);//2
-            //combate.Turn(0);//1
-            //combate.Turn(0);//2
-            //combate.Turn(0);//1 Utiliza por cuarta vez defensa y no se le permite, pierde el turno
-            //combate.Turn(0);//2
+            List<Skill> skillSetLuz = new List<Skill> { attackSkill };
+            List<Skill> skillSetEarth = new List<Skill> { dfUp };
+            
 
-            Console.WriteLine("=============================================================== FIN PRUEBA UNITARIA 4");
+            Critter luz = new Critter("DragonsitoLuz", 40, 40, 5, 150, Affinity.Light, skillSetLuz);
+            Critter tierra = new Critter("DragonsitoTierra", 50, 50, 10, 200, Affinity.Earth, skillSetEarth);
 
-            Console.WriteLine(tierra.Hp); 
-            combate.Turn(1);
-            Console.WriteLine(tierra.Hp);
+            List<Critter> critersEsclavos1 = new List<Critter> { luz };
+            List<Critter> critersEsclavos2 = new List<Critter> { tierra };
+
+            Player player1 = new Player(critersEsclavos1);
+            Player player2 = new Player(critersEsclavos2);
+
+            Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
+
+            Console.WriteLine("Vida Inicial Critter tierra: " + tierra.Hp);
+            combate.Turn(0);
+            Console.WriteLine("Vida luego del ataque con afinidad Fire: " + tierra.Hp);
+
+        } */
+        //PRUEBA 6-7
+
+        /*
+        static void Main(string[] args)
+        {
+            AttackSkill attackSkill = new AttackSkill("AtaqueFeróz", 5, Affinity.Water);
+            SupportSkill dfUp = new DefUp("AumentoDefensa", 15, Affinity.Dark, 0.2f, 3);
+
+            List<Skill> skillSetWater = new List<Skill> { attackSkill };
+            List<Skill> skillSetEarth = new List<Skill> { dfUp };
 
 
+            Critter water = new Critter("DragonsitoWATER", 40, 40, 5, 150, Affinity.Light, skillSetWater);
+            Critter Wind = new Critter("DragonsitoWIND", 50, 50, 10, 200, Affinity.Wind, skillSetEarth);
+            Critter Dark = new Critter("DragonsitoDark", 60, 60, 50, 100, Affinity.Dark, skillSetEarth);
+            Critter Fire = new Critter("DragonsitoOscuridad", 70, 70, 30, 300, Affinity.Fire, skillSetWater);
 
+            List<Critter> critersEsclavos1 = new List<Critter> {Dark,water };
+            List<Critter> critersEsclavos2 = new List<Critter> {Fire, Wind };
 
+            Player player1 = new Player(critersEsclavos1);
+            Player player2 = new Player(critersEsclavos2);
 
+            Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
+            Console.WriteLine("============================PRUEBA 6");
+            
+            Console.WriteLine("Vida Inicial Critter tierra: " + Wind.Hp);
+            combate.Turn(0); //1
+            Console.WriteLine("Vida luego del ataque con afinidad water: " + Wind.Hp);
+            Console.WriteLine("============================PRUEBA 7");
+            combate.Turn(0); //2
+            combate.Turn(0); //1
+            combate.Turn(0); //2
+            combate.Turn(0); //1 
+
+            Console.WriteLine("=====================Critters Player 1");
+            foreach (Critter i in player1.critters)
+            {
+                Console.WriteLine(i.Name);
+            }
+
+            Console.WriteLine("=====================Critters Player 2");
+            foreach (Critter i in player2.critters)
+            {
+                Console.WriteLine(i.Name);
+            }
 
         }
+        */
+
+
+        
     }
 }

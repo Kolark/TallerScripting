@@ -17,7 +17,7 @@ namespace TallerScripting
             }
             else
             {
-                Console.WriteLine("Can't use a supportive skill of the same type more than three times on the same critter, you lose your turn!");
+                Console.WriteLine("Can't use a sPdown skill of the same type more than three times on the same critter, you lose your turn!");
             }
         }
 

@@ -38,7 +38,20 @@ namespace TallerScripting
             //this.baseSpeed = baseSpeed;
             this.hp = hp;
             this.affinity = affinity;
-            moveSet = skills;
+            
+            if (skills.Count <= 3)
+            {
+                moveSet = skills;
+            }
+            else
+            {
+                moveSet = new List<Skill>();
+                for (int i = 0; i < 3; i++)
+                {
+                    moveSet.Add(skills[i]);
+                }
+            }
+            
         }
 
         public void GetDamage(float damageTaken)

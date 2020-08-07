@@ -39,6 +39,7 @@ namespace TallerScripting
                         Critter exchange = stacks[1 - index].Pop();
                         players[index].critters.Add(exchange);
                         players[1 - index].critters.Remove(exchange);
+                        Console.WriteLine("Fue vencido el critter del jugador " + ((1 - index)+1));
                         if (players[1 - index].critters.Count == 0)
                         {
                             Winner = true;
@@ -55,16 +56,6 @@ namespace TallerScripting
                 }
                 
             }
-        }
-
-        public void PRINT()
-        {
-            for (int i = 0; i < players.Length; i++)
-            {
-                Console.WriteLine("|----------" + i +"----------|");
-
-            }
-            
         }
     }
 }
