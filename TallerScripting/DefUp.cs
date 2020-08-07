@@ -18,7 +18,7 @@ namespace TallerScripting
             }
         }
 
-        public DefUp(string name, int power, Affinity affinity, float porcentaje, int counter, int maxCounter) : base(name, power, affinity, porcentaje, counter, maxCounter)
+        public DefUp(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)
         {
         }
     }

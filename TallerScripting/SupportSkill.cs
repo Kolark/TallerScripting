@@ -14,7 +14,7 @@ namespace TallerScripting
         protected int maxUses;
 
 
-        public SupportSkill(string name, int power, Affinity affinity,float porcentaje, int counter, int maxUses) : base(name, power, affinity)
+        public SupportSkill(string name, int power, Affinity affinity,float porcentaje, int maxUses) : base(name, power, affinity)
         {
             this.porcentaje = porcentaje;
             this.power = 0;

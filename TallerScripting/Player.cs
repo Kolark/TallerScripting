@@ -10,9 +10,9 @@ namespace TallerScripting
     {
         public List<Critter> critters;
 
-        public Player()
+        public Player(List<Critter> critters)
         {
-            critters = new List<Critter>();
+            this.critters = critters;
         }
     }
 }

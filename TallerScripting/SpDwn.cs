@@ -13,11 +13,13 @@ namespace TallerScripting
             if (counter > this.maxUses) Console.WriteLine("Can't use a supportive skill of the same type more than three times, you lost your turn!");
             else
             {
+                Console.WriteLine("Se disminutó la velocidad");
                 enemyCritter.bonusSpeed += (int)(enemyCritter.BaseSpeed * porcentaje);
+                counter++;
             }
         }
 
-        public SpDwn(string name, int power, Affinity affinity, float porcentaje, int counter, int maxCounter) : base(name, power, affinity, porcentaje, counter, maxCounter)
+        public SpDwn(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)
         {
         }
     }
