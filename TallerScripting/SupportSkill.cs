@@ -9,23 +9,19 @@ namespace TallerScripting
     abstract class SupportSkill : Skill
     { 
         
-        private float porcentaje;
-        private int valor;
+        protected float porcentaje;
+        protected int counter = 0;
+        protected int maxUses;
 
 
-        public SupportSkill(string name, int power, Affinity affinity,float porcentaje) : base(name, power, affinity)
+        public SupportSkill(string name, int power, Affinity affinity,float porcentaje, int counter, int maxUses) : base(name, power, affinity)
         {
             this.porcentaje = porcentaje;
             this.power = 0;
+            this.maxUses = maxUses;
         }
 
         public float Porcentaje { get => porcentaje;}
-        public int Valor { get => valor;}
-
-        //public override void DoSkill(Critter currentCritter, Critter enemyCritter)
-        //{
-   
-        //}
 
 
     }

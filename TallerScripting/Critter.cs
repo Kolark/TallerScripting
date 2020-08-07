@@ -12,11 +12,11 @@ namespace TallerScripting
         private int baseAttack;
         private int baseDefense;
         private int baseSpeed;
-        private int hp;
+        private float hp;
 
         public int bonusAttack;
         public int bonusDefense;
-        public int debuffSpeed;
+        public int bonusSpeed;
 
         private List<Skill> moveSet;
         Affinity affinity;
@@ -24,7 +24,7 @@ namespace TallerScripting
 
 
         
-        public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, int hp, Affinity affinity, List<Skill> skills)
+        public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, float hp, Affinity affinity, List<Skill> skills)
         {
             this.name = name;
             this.baseAttack = baseAttack;
@@ -35,16 +35,17 @@ namespace TallerScripting
             moveSet = skills;
         }
 
-        public void GetDamage(Skill skill, Critter critter)
+        public void GetDamage(float damageTaken)
         {
-            int damageTaken = (skill.Power + critter.baseAttack) /*  * AffinityMultiplier*/;
+            hp -= damageTaken;
+            if (hp < 0) hp = 0;
         }
 
         public string Name { get => name;}
         public int BaseAttack { get => baseAttack + bonusAttack;}
         public int BaseDefense { get => baseDefense + bonusDefense;}
-        public int BaseSpeed { get => baseSpeed - debuffSpeed;}
-        public int Hp { get => hp;}
+        public int BaseSpeed { get => baseSpeed + bonusSpeed;}
+        public float Hp { get => hp;}
         public Affinity Affinity { get => affinity;}
         public List<Skill> MoveSet { get => moveSet;}
     }
