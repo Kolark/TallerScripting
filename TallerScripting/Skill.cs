@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
-    class Skill
+    public abstract class Skill
     {
-        private string name;
-        private int power;
-        Affinity affinity;
+        protected string name;
+        protected int power;
+        protected Affinity affinity;
 
         public Skill(string name, int power, Affinity affinity)
         {
@@ -19,8 +19,12 @@ namespace TallerScripting
             this.affinity = affinity;
         }
 
-        public string Name { get => name;}
-        public int Power { get => power;}
-        public Affinity Affinity { get => affinity;}
+        public string Name { get => name; }
+        public int Power { get => power; }
+        public Affinity Affinity { get => affinity; }
+
+        public abstract void DoSkill();
+        //public virtual void DoSkill(Critter critter) { }
+        //public virtual void DoSkill(ref float Value) { }
     }
 }

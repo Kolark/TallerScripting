@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
-    class Critter
+    public class Critter
     {
         private string name;
         private int baseAttack;
