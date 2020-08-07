@@ -13,6 +13,6 @@ namespace TallerScripting
     }
     public enum Affinity
     {
-        Fire, Wind, Water, Earth, Dark, Light
+        Dark, Light, Fire, Water, Wind, Earth
     }
 }
