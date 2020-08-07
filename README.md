@@ -22,7 +22,7 @@ La razón para que en clase combate exista un arreglo de tamaño 2 de Players y 
 Consideramos que es parte del Front End mostrar las Skills del critter en el Peek() del stack. Como por ejemplo en Dragon City que muestra las habilidades en varios botones, y cada uno de estos botones haria el método de turn con un diferente valor para el parametro skill, osea en pocas palabras en nuestra solución el front end se encarga de que el método turn se haga correctamente por el jugador correspondiente.
 Luego de realizar el Skill, podemos revisar si el critter afectado fue vencido para luego sacarlo del stack, agregarselo a la colección del player que lo derroto, y quitarselo al player que lo poseia. Ademas luego se puede revisar si el Stack del enemigo es igual a 0, por lo que ya habria un ganador.
 
-### El main se encuentra en la clase PruebasUnitarias
+### En la clase pruebas unitarias hay varios main pero estan comentados. Cada main corresponde a 1 o 2 puntos de las pruebas unitarias.
 
 
 
