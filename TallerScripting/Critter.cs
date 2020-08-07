@@ -13,11 +13,13 @@ namespace TallerScripting
         private int baseDefense;
         private int baseSpeed;
         private int hp;
+        private List<Skill> moveSet;
         Affinity affinity;
 
 
+
         
-        public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, int hp, Affinity affinity)
+        public Critter(string name, int baseAttack, int baseDefense, int baseSpeed, int hp, Affinity affinity, List<Skill> skills)
         {
             this.name = name;
             this.baseAttack = baseAttack;
@@ -25,6 +27,7 @@ namespace TallerScripting
             this.baseSpeed = baseSpeed;
             this.hp = hp;
             this.affinity = affinity;
+            moveSet = skills;
         }
 
         public string Name { get => name;}
@@ -33,5 +36,6 @@ namespace TallerScripting
         public int BaseSpeed { get => baseSpeed;}
         public int Hp { get => hp;}
         public Affinity Affinity { get => affinity;}
+        public List<Skill> MoveSet { get => moveSet;}
     }
 }

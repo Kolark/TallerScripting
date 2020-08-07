@@ -6,21 +6,42 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
-    class SupportSkill : Skill
+    enum Habilidad
     {
+        atkUp, DefUp, SpeedDown
+    }
+    class SupportSkill : Skill
+    { 
+        
         private float porcentaje;
         private int valor;
-        public SupportSkill(string name, int power, Affinity affinity,float porcentaje) : base(name, power, affinity)
+        int habilidadSoporte = 0;
+        Habilidad habilidad;
+        public SupportSkill(string name, int power, Affinity affinity,float porcentaje, Habilidad habilidad) : base(name, power, affinity)
         {
             this.porcentaje = porcentaje;
+            this.habilidad = habilidad;
         }
 
         public float Porcentaje { get => porcentaje;}
         public int Valor { get => valor;}
 
-        public override void DoSkill()
+        public override void DoSkill(Critter critter)
         {
-            
+        if(habilidad == Habilidad.atkUp)
+            {
+
+            }
+        else if (habilidad == Habilidad.DefUp)
+            {
+
+            }
+            else if (habilidad == Habilidad.SpeedDown)
+            {
+
+            }
         }
+
+
     }
 }

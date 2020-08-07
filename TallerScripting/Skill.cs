@@ -23,8 +23,6 @@ namespace TallerScripting
         public int Power { get => power; }
         public Affinity Affinity { get => affinity; }
 
-        public abstract void DoSkill();
-        //public virtual void DoSkill(Critter critter) { }
-        //public virtual void DoSkill(ref float Value) { }
+        public abstract void DoSkill(Critter critter);
     }
 }
