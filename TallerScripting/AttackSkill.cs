@@ -15,7 +15,7 @@ namespace TallerScripting
             if(power <= 0 && power > 10)
             {
                 Console.WriteLine("Poder seleccionado invalido, se asignará un valor aleatorio entre 1 y 10");
-                power = rnd.Next(1, 11);
+                base.power = rnd.Next(1, 11);
             }
         }
 
