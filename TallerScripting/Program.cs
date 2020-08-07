@@ -10,7 +10,6 @@ namespace TallerScripting
     {
         static void Main(string[] args)
         {
-            
         }
     }
 }
