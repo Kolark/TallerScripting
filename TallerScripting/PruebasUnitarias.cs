@@ -21,7 +21,7 @@ namespace TallerScripting
             Console.WriteLine($"The power of the atkUp skill is: {atkUp.Power}");
             Console.WriteLine($"The power of the spdDwn skill is: {spdDwn.Power}");
 
-            List<Skill> skillSetTierra = new List<Skill> { attackSkill, spdDwn };
+            List<Skill> skillSetTierra = new List<Skill> {attackSkill, spdDwn };
             List<Skill> skillSetAgua = new List<Skill> { attackSkill, spdDwn };
             List<Skill> skillSetLuz = new List<Skill> { atkUp, spdDwn };
             List<Skill> skillSetOscuridad = new List<Skill> { attackSkill, spdDwn };
@@ -38,19 +38,13 @@ namespace TallerScripting
             Player player2 = new Player(critersEsclavos2);
 
             Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
-            combate.Turn(1);
-            combate.Turn(1);
-            combate.Turn(1);
-            combate.Turn(1);
-            combate.Turn(1);
-            combate.Turn(1);
-            combate.Turn(1);
 
-            //Critter tierra = new Critter("DragonsitoTierra", 70, 100, 50, 200, Affinity.Earth, skillSetTierra);
-            Console.WriteLine(tierra.BaseAttack);
-            Console.WriteLine(tierra.BaseDefense);
-            Console.WriteLine(tierra.BaseSpeed);
-
+            Console.WriteLine("===============================================================");
+            combate.Turn(1);//1
+            combate.Turn(1);//2
+            combate.Turn(1);//1
+            combate.Turn(1);//2
+            combate.Turn(1);//1
 
         }
     }
