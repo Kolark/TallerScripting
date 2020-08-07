@@ -23,23 +23,33 @@ namespace TallerScripting
 
         public void Turn(int skill)
         {
+            
             if (!Winner)
             {
 
                 int index = contador % 2;
-                Console.WriteLine("Es turno del jugador: " + index +1);
-                stacks[index].Peek().MoveSet[skill].DoSkill(stacks[index].Peek(), stacks[1 - index].Peek());
-                if (stacks[1 - index].Peek().Hp <= 0)
+
+                    Console.WriteLine("Es turno del jugador: " + index +1);
+                if(skill < stacks[index].Peek().MoveSet.Count)
                 {
-                    Critter exchange = stacks[1 - index].Pop();
-                    players[index].critters.Add(exchange);
-                    players[1 - index].critters.Remove(exchange);
-                    if (players[1 - index].critters.Count == 0)
+                    stacks[index].Peek().MoveSet[skill].DoSkill(stacks[index].Peek(), stacks[1 - index].Peek());
+                    if (stacks[1 - index].Peek().Hp <= 0)
                     {
-                        Winner = true;
+                        Critter exchange = stacks[1 - index].Pop();
+                        players[index].critters.Add(exchange);
+                        players[1 - index].critters.Remove(exchange);
+                        if (players[1 - index].critters.Count == 0)
+                        {
+                            Winner = true;
+                        }
                     }
+                    contador++;
                 }
-                contador++;
+                else
+                {
+                    Console.WriteLine("El skill con ese número no existe, número fuera de rango");
+                }
+                
             }
         }
 
