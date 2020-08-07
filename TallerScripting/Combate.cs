@@ -42,6 +42,7 @@ namespace TallerScripting
                         if (players[1 - index].critters.Count == 0)
                         {
                             Winner = true;
+                            Console.WriteLine("!!Hubo un ganador!!! y es el player : " + (index + 1));
                         }
                     }
                     contador++;
