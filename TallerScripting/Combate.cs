@@ -46,7 +46,7 @@ namespace TallerScripting
                     }
                     contador++;
                     index = contador % 2;
-                    Console.WriteLine("Ahora es el turno del jugador: " + (index + 1));
+                    Console.WriteLine("\nAhora es el turno del jugador: " + (index + 1));
                 }
                 else
                 {

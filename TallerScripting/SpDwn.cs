@@ -10,28 +10,14 @@ namespace TallerScripting
     {
         public override void DoSkill(Critter currentCritter, Critter enemyCritter)
         {
-            if(enemyCritter.bonusSpeed < GetMaxBonus(enemyCritter))
+            if(Math.Abs(enemyCritter.bonusSpeed) < GetMaxBonus(enemyCritter))
             {
-
-            }
-            else
-            {
-
-            }
-
-            if (counter >= this.maxUses)
-            {
-                Console.WriteLine("Can't use a supportive skill of the same type more than three times, you lost your turn!");
-                Console.WriteLine("c: " + counter);
-            }
-            else
-            {
-                
                 Console.WriteLine("speed Down");
-                counter++;
                 enemyCritter.bonusSpeed += (int)(enemyCritter.BaseSpeed * porcentaje);
-                Console.WriteLine("c: " + counter);
-
+            }
+            else
+            {
+                Console.WriteLine("Can't use a supportive skill of the same type more than three times on the same critter, you lose your turn!");
             }
         }
 

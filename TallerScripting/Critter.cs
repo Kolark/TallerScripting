@@ -48,9 +48,13 @@ namespace TallerScripting
         }
 
         public string Name { get => name;}
-        public float BaseAttack { get => baseAttack + bonusAttack;}
-        public float BaseDefense { get => baseDefense + bonusDefense;}
-        public float BaseSpeed { get => baseSpeed + bonusSpeed;}
+        public float BaseAttack { get => baseAttack; }
+        public float BaseDefense { get => baseDefense; }
+        public float BaseSpeed { get => baseSpeed; }
+        public float Attack { get => baseAttack + bonusAttack; }
+        public float Defense { get => baseDefense + bonusDefense; }
+        public float Speed { get => baseSpeed + bonusSpeed; }
+
         public float Hp { get => hp;}
         public Affinity Affinity { get => affinity;}
         public List<Skill> MoveSet { get => moveSet;}

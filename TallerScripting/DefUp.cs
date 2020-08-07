@@ -10,12 +10,20 @@ namespace TallerScripting
     {
         public override void DoSkill(Critter currentCritter, Critter enemyCritter)
         {
-            if (counter > this.maxUses) Console.WriteLine("Can't use a supportive skill of the same type more than three times, you lost your turn!");
+            if (currentCritter.bonusDefense < GetMaxBonus(currentCritter))
+            {
+                Console.WriteLine("defense Up");
+                currentCritter.bonusDefense += (int)(currentCritter.BaseDefense * porcentaje);
+            }
             else
             {
-                currentCritter.bonusDefense += (int)(currentCritter.BaseDefense * porcentaje);
-                counter++; 
+                Console.WriteLine("Can't use a supportive skill of the same type more than three times in the same critter, you lose your turn!");
             }
+        }
+
+        public override float GetMaxBonus(Critter critter)
+        {
+            return Math.Abs(porcentaje * critter.BaseDefense * maxUses);
         }
 
         public DefUp(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)
