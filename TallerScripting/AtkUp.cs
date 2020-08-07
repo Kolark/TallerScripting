@@ -13,7 +13,7 @@ namespace TallerScripting
             if (currentCritter.bonusAttack < GetMaxBonus(currentCritter))
             {
                 Console.WriteLine("attack Up");
-                currentCritter.bonusAttack += (int)(currentCritter.BaseAttack * porcentaje);
+                currentCritter.bonusAttack += (int)(currentCritter.BaseAttack * percentage);
             }
             else
             {
@@ -23,7 +23,7 @@ namespace TallerScripting
 
         public override float GetMaxBonus(Critter critter)
         {
-            return Math.Abs(porcentaje * critter.BaseAttack * maxUses);
+            return Math.Abs(percentage * critter.BaseAttack * maxUses);
         }
 
         public AtkUp(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)

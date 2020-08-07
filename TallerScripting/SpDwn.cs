@@ -13,7 +13,7 @@ namespace TallerScripting
             if(Math.Abs(enemyCritter.bonusSpeed) < GetMaxBonus(enemyCritter))
             {
                 Console.WriteLine("speed Down");
-                enemyCritter.bonusSpeed += (int)(enemyCritter.BaseSpeed * porcentaje);
+                enemyCritter.bonusSpeed += (int)(enemyCritter.BaseSpeed * percentage);
             }
             else
             {
@@ -23,7 +23,7 @@ namespace TallerScripting
 
         public override float GetMaxBonus(Critter critter)
         {
-            return Math.Abs(porcentaje*critter.BaseSpeed*maxUses);
+            return Math.Abs(percentage*critter.BaseSpeed*maxUses);
         }
 
         public SpDwn(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)

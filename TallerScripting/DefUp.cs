@@ -13,7 +13,7 @@ namespace TallerScripting
             if (currentCritter.bonusDefense < GetMaxBonus(currentCritter))
             {
                 Console.WriteLine("defense Up");
-                currentCritter.bonusDefense += (int)(currentCritter.BaseDefense * porcentaje);
+                currentCritter.bonusDefense += (int)(currentCritter.BaseDefense * percentage);
             }
             else
             {
@@ -23,7 +23,7 @@ namespace TallerScripting
 
         public override float GetMaxBonus(Critter critter)
         {
-            return Math.Abs(porcentaje * critter.BaseDefense * maxUses);
+            return Math.Abs(percentage * critter.BaseDefense * maxUses);
         }
 
         public DefUp(string name, int power, Affinity affinity, float porcentaje, int maxCounter) : base(name, power, affinity, porcentaje, maxCounter)

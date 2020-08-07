@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace TallerScripting
 {
-    class Combate
+    class Combat
     {
         bool Winner = false;
-        int contador = 0;
+        int Counter = 0;
         Player[] players = new Player[2];
         Stack<Critter>[] stacks = new Stack<Critter>[2];
         
-        public Combate(Player player1, Player player2,List<Critter> crittersP1, List<Critter> crittersP2)
+        public Combat(Player player1, Player player2,List<Critter> crittersP1, List<Critter> crittersP2)
         {
             players[0] = player1;
             players[1] = player2;
@@ -27,7 +27,7 @@ namespace TallerScripting
             if (!Winner)
             {
 
-                int index = contador % 2;
+                int index = Counter % 2;
                 Console.WriteLine("The player  " + (index + 1) + " did the following effect");
                     
                 if(skill < stacks[index].Peek().MoveSet.Count)
@@ -46,8 +46,8 @@ namespace TallerScripting
                             Console.WriteLine("!!Hubo un ganador!!! y es el player : " + (index + 1));
                         }
                     }
-                    contador++;
-                    index = contador % 2;
+                    Counter++;
+                    index = Counter % 2;
                     Console.WriteLine("\nAhora es el turno del jugador: " + (index + 1));
                 }
                 else

@@ -42,10 +42,10 @@ namespace TallerScripting
             Player player1 = new Player(critersEsclavos1);
             Player player2 = new Player(critersEsclavos2);
 
-            Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
+            Combat combat = new Combat(player1, player2, player1.critters, player2.critters);
 
             Console.WriteLine("=============================================================== PRUEBA UNITARIA 3");
-            combate.Turn(0);//1 spdown
+            combat.Turn(0);//1 spdown
             Console.WriteLine( "Speed Base: " + tierra.BaseSpeed);
             Console.WriteLine("Speed: " + tierra.Speed);
 
@@ -53,19 +53,21 @@ namespace TallerScripting
 
             Console.WriteLine("Defensa bonus : " + tierra.bonusDefense);
             Console.WriteLine("Maxima defensa posible : " +  dfUp.GetMaxBonus(tierra));
-            combate.Turn(0);//2 defUp
-            combate.Turn(0);//1 spdown
-            combate.Turn(0);//2 defUp
-            combate.Turn(0);//1 spdown
-            combate.Turn(0);//2 defUp
-            combate.Turn(0);//1  spdown
-            combate.Turn(0);//2 defUp Utiliza por cuarta vez defensa y no se le permite, pierde el turno
+            combat.Turn(0);//2 defUp
+            combat.Turn(0);//1 spdown
+            combat.Turn(0);//2 defUp
+            combat.Turn(0);//1 spdown
+            combat.Turn(0);//2 defUp
+            combat.Turn(0);//1  spdown
+            combat.Turn(0);//2 defUp Utiliza por cuarta vez defensa y no se le permite, pierde el turno
             Console.WriteLine("Luego de aplicar dfUp 4 veces");
 
             Console.WriteLine("Defensa bonus : " + tierra.bonusDefense);
             
-        }*/
+        }
+        */
         //PRUEBA 5
+
         /*
         static void Main(string[] args)
         {
@@ -85,13 +87,15 @@ namespace TallerScripting
             Player player1 = new Player(critersEsclavos1);
             Player player2 = new Player(critersEsclavos2);
 
-            Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
+            Combat combat = new Combat(player1, player2, player1.critters, player2.critters);
 
             Console.WriteLine("Vida Inicial Critter tierra: " + tierra.Hp);
-            combate.Turn(0);
+            combat.Turn(0);
             Console.WriteLine("Vida luego del ataque con afinidad Fire: " + tierra.Hp);
 
-        } */
+        } 
+        */
+
         //PRUEBA 6-7
 
         /*
@@ -115,7 +119,7 @@ namespace TallerScripting
             Player player1 = new Player(critersEsclavos1);
             Player player2 = new Player(critersEsclavos2);
 
-            Combate combate = new Combate(player1, player2, player1.critters, player2.critters);
+            Combat combate = new Combat(player1, player2, player1.critters, player2.critters);
             Console.WriteLine("============================PRUEBA 6");
             
             Console.WriteLine("Vida Inicial Critter tierra: " + Wind.Hp);
