@@ -13,6 +13,13 @@ namespace TallerScripting
         Player[] players = new Player[2];
         Stack<Critter>[] stacks = new Stack<Critter>[2];
         
+        public Combate(Player player1, Player player2,List<Critter> crittersP1, List<Critter> crittersP2)
+        {
+            players[0] = player1;
+            players[1] = player2;
+            stacks[0] = new Stack<Critter>(crittersP1);
+            stacks[1] = new Stack<Critter>(crittersP2);
+        }
 
         public void Turn(int skill)
         {
